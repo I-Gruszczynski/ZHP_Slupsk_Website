@@ -1,0 +1,77 @@
+.contactMain-header {
+  text-align: center;
+}
+.contactMain-header > h1 {
+  font-size: 42px;
+}
+.contactMain-header > hr {
+  height: 5px;
+  width: 60%;
+  background-color: #000069;
+  border: none;
+}
+.contactMain-header > p {
+  font-size: 32px;
+  padding: 30px;
+}
+.contactMain-context {
+  margin: 0 auto;
+  width: 60%;
+}
+.contactMain-context-text {
+  width: 80%;
+  margin: 0 auto;
+}
+.contactMain-context-left {
+  float: left;
+  width: 40%;
+  margin: 0 0 0 10%;
+}
+.contactMain-context-left > p {
+  font-size: 18px;
+}
+.contactMain-context-right {
+  float: right;
+  width: 40%;
+  margin: 0 0 0 10%;
+}
+.contactMain-context-right > p {
+  font-size: 18px;
+}
+.contactMain-socialmedia {
+  text-align: center;
+}
+.contactMain-socialmedia > p {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contactMain-context {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .contactMain-context-right {
+    float: right;
+    width: 45%;
+    margin: 0 0 0 5%;
+  }
+  .contactMain-context-left {
+    float: left;
+    width: 45%;
+    margin: 0 0 0 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contactMain-context {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contactMain-context-right {
+    width: 100%;
+    margin: 0px;
+  }
+  .contactMain-context-left {
+    width: 100%;
+    margin: 0px;
+  }
+}

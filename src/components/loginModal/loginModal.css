@@ -1,0 +1,126 @@
+.loginModal-background {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.loginModal-main {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
+  background-color: white;
+  width: 800px;
+  height: 550px;
+  text-align: center;
+  border-radius: 20px;
+  z-index: 2;
+}
+.loginModal-main > h1 {
+  margin: 40px;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.loginModal-main > hr {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 80%;
+  height: 4px;
+  background-color: #000069;
+}
+
+.loginModal-main > form > label {
+  margin: 0px auto;
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+  text-align: left;
+  display: inline-block;
+}
+
+.loginModal-main > form > input {
+  margin: 0px auto;
+  width: 78%;
+  height: 40px;
+  padding: 1%;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+.loginModal-main > form > button {
+  margin: 2.5%;
+  width: 40%;
+  height: 60px;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  border-radius: 10px;
+  border: none;
+}
+.loginModal-main-btn-login {
+  background-color: green;
+  color: white;
+}
+.loginModal-main-btn-cancel {
+  background-color: red;
+  color: white;
+}
+.loginModal-main-btn-login:hover {
+  background-color: white;
+  color: green;
+  cursor: pointer;
+  border: 1px solid green;
+}
+.loginModal-main-btn-cancel:hover {
+  background-color: white;
+  color: red;
+  cursor: pointer;
+  border: 1px solid red;
+}
+.loginModal-main-err {
+  height: 40px;
+  margin: 0px;
+  color: red;
+  font-size: 24px;
+}
+.loginModal-main-input-err {
+  border: 1px solid red;
+}
+
+@media screen and (max-width: 800px) {
+  .loginModal-main > h1 {
+    margin: 20px;
+    font-size: 24px;
+  }
+  .loginModal-main > hr {
+    height: 2px;
+  }
+
+  .loginModal-main > form > label {
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .loginModal-main > form > input {
+    height: 30px;
+    font-size: 14px;
+  }
+  .loginModal-main > form > button {
+    height: 50px;
+    font-size: 22px;
+  }
+  .loginModal-main-err {
+    height: 30px;
+    font-size: 18px;
+  }
+  .loginModal-main {
+    width: 500px;
+    height: 420px;
+  }
+}

@@ -1,0 +1,60 @@
+.main-deleteres {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+
+.main-deleteres-box {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 500px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+.main-deleteres-btn-box {
+  float: left;
+  width: 100%;
+}
+
+.main-deleteres-btn-yes {
+  border: 1px solid green;
+  padding: 10px 20px;
+  margin: 20px 30px;
+  color: green;
+  font-size: 24px;
+  border-radius: 10px;
+  width: 80px;
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+.main-deleteres-btn-no {
+  border: 1px solid red;
+  padding: 10px 20px;
+  margin: 20px 30px;
+  color: red;
+  font-size: 24px;
+  border-radius: 10px;
+  width: 80px;
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+.main-deleteres-btn-yes:hover {
+  background-color: green;
+  color: #fff;
+}
+.main-deleteres-btn-no:hover {
+  background-color: red;
+  color: #fff;
+}

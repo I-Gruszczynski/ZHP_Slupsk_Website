@@ -1,0 +1,529 @@
+.adminpanelMain-context-show > p {
+  white-space: pre-line;
+}
+.adminpanelMain > h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.adminpanelMain-nav {
+  width: 100%;
+  height: 100px;
+  background-color: #030392;
+}
+.adminpanelMain-nav > ul {
+  list-style: none;
+  padding: 0px;
+  border: 1px solid#030392;
+  border-bottom: none;
+}
+.adminpanelMain-nav > ul > li {
+  float: left;
+  text-align: center;
+  width: 50%;
+  line-height: 100px;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.adminpanelMain-nav > ul > li:hover {
+  cursor: pointer;
+}
+.adminpanelMain-nav > ul > li.active {
+  background-color: white;
+  color: #030392;
+}
+.adminpanelMain-context {
+  border: 1px solid#030392;
+}
+.adminpanelMain-context-input {
+  margin: 5%;
+  width: 40%;
+  float: left;
+}
+.adminpanelMain-context-input > form > label {
+  width: 90%;
+  display: inline-block;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #030392;
+  font-weight: 500;
+}
+input {
+  width: 90%;
+  display: inline-block;
+  margin-bottom: 20px;
+  border: 1px solid#030392;
+}
+.adminpanelMain-headline {
+  font-size: 32px;
+  height: 80px;
+}
+.adminpanelMain-context-headline {
+  font-size: 32px;
+  height: 80px;
+}
+.adminpanelMain-author {
+  font-size: 22px;
+  height: 40px;
+}
+textarea {
+  width: 90%;
+  display: inline-block;
+  font-size: 22px;
+  height: 300px;
+  margin-bottom: 10px;
+  border: 1px solid#030392;
+}
+.adminpanelMain-context-show {
+  margin: 5%;
+  width: 40%;
+  float: left;
+}
+.adminpanelMain-context-show > label {
+  width: 100%;
+  display: inline-block;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #030392;
+  font-weight: 500;
+}
+.adminpanelMain-context-labelimage1 {
+  width: 90%;
+}
+.adminpanelMain-context-labelimage {
+  width: 80%;
+  text-align: center;
+  margin: 20px auto;
+  border: 5px dashed #030392;
+}
+.adminpanelMain-context-labelimage-headline {
+  margin-top: 0px;
+}
+#adminpanelMain-context-inputimage {
+  display: none !important;
+}
+.adminpanelMain-context-img-carousel
+  > .carousel-root
+  > .carousel
+  > .thumbs-wrapper {
+  display: none;
+}
+.adminpanelMain-context-img-carousel {
+  width: 80%;
+}
+.adminpanelMain-context-img2 > img {
+  width: 90%;
+}
+.adminpanelMain-context-inputimage-headline {
+  text-align: center;
+  color: #d8d50b;
+  width: 100%;
+  margin: 20px 0px;
+  display: block;
+  font-weight: 800;
+  font-size: 18px;
+}
+.adminpanelMain-context-inputimage-headline:hover {
+  color: #b1ae0a;
+  cursor: pointer;
+}
+.adminpanelMain-context-labelimage > label {
+  width: 60%;
+}
+.adminpanelMain-context-show > h1,
+.adminpanelMain-context-show > h4,
+.adminpanelMain-context-show > p {
+  margin: 0px 10px 20px 0px;
+  font-size: 22px;
+}
+.adminpanelMain-context-show > h1 {
+  font-size: 36px;
+  height: auto;
+}
+.adminpanelMain-context-show > h4 {
+  height: 40px;
+  color: #aaa;
+}
+.adminpanelMain-context-show > p {
+  margin-top: 10px;
+}
+.adminpanelMain-context-show > img {
+  width: 100%;
+}
+.adminpanelMain-context-inputimage-image {
+  width: 90%;
+  margin: 5%;
+}
+.adminpanelMain-button {
+  text-align: center;
+  margin: 50px;
+}
+.adminpanelMain-context > h1 {
+  margin-left: 10px;
+}
+.adminpanelMain-button > button {
+  height: 100px;
+  width: 420px;
+  color: white;
+  background-color: #030392;
+  font-size: 32px;
+  font-weight: 600;
+}
+.adminpanelMain-button > button:hover {
+  background-color: #000069;
+  cursor: pointer;
+}
+.adminpanelMain-context-box {
+  max-height: 300px;
+  height: auto;
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid #000069;
+  border-radius: 20px;
+  transition: max-height 0.5s ease-in;
+}
+
+.adminpanelMain-context-box-active {
+  max-height: 3000px;
+  height: auto;
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid #000069;
+  border-radius: 20px;
+  transition: max-height 0.5s ease-in;
+}
+.adminpanelMain-context-box-arrow {
+  transition-duration: 0.5s;
+  transition-property: transform;
+  transform: rotate(0deg);
+}
+.adminpanelMain-context-box-arrow-active {
+  transition-duration: 0.5s;
+  transition-property: transform;
+  transform: rotate(180deg);
+}
+
+.adminpanelMain-context-img {
+  float: left;
+  width: 30%;
+}
+.adminpanelMain-context-img2 {
+  float: left;
+  width: 100%;
+}
+.adminpanelMain-context-img-none {
+  height: 250px;
+  width: 75%;
+  border: 4px dashed #aaa;
+  text-align: center;
+  color: #aaa;
+  padding-top: 20px;
+}
+.adminpanelMain-context-img-none > p {
+  margin-top: 0px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.adminpanelMain-context-img > img {
+  height: 280px;
+}
+.adminpanelMain-context-text {
+  float: left;
+  width: 60%;
+}
+.adminpanelMain-context-text > h2 {
+  font-size: 32px;
+}
+.adminpanelMain-context-dateauthor {
+  font-size: 22px;
+  color: #aaa;
+  float: left;
+  width: auto;
+}
+.adminpanelMain-context-dateauthor > p {
+  float: left;
+  margin: 0px 10px 0px 10px;
+}
+.imageSingle > img {
+  margin: 20px;
+}
+.adminpanelMain-context-button {
+  float: left;
+  width: 10%;
+  margin-top: 100px;
+  text-align: center;
+
+  align-items: center;
+  display: flex;
+}
+.adminpanelMain-context-button > button {
+  background-color: white;
+  border: 1px solid #030392;
+  color: #030392;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+}
+.adminpanelMain-context-button > button:hover {
+  background-color: #030392;
+  color: white;
+  cursor: pointer;
+}
+
+.adminpanelMain-context-carousel-img {
+  object-fit: contain;
+  height: 250px;
+}
+.adminpanelMain-context-carousel-delete {
+  background-color: #f44336;
+  color: white;
+  margin-top: 0px;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+}
+.adminpanelMain-context-carousel-delete:hover {
+  background-color: #c9382e;
+  cursor: pointer;
+}
+.adminpanelMain-context-inputimage-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: #f44336;
+  font-weight: 600;
+  border-color: #f44336;
+}
+.adminpanelMain-context-inputimage-button:hover {
+  background-color: #c9382e;
+  color: white;
+  cursor: pointer;
+}
+.adminpanelMain-context-inputimage-buttonNew {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: #f44336;
+  font-weight: 600;
+  border-color: #f44336;
+  margin-left: -40px;
+}
+.adminpanelMain-context-inputimage-buttonNew:hover {
+  background-color: #c9382e;
+  color: white;
+  cursor: pointer;
+}
+.adminpanelMain-context-box-rest {
+  height: auto;
+  overflow: hidden;
+  animation: fade-in 2.5s;
+  margin: 40px 10px;
+  font-size: 18px;
+  white-space: pre-line;
+}
+
+.adminpanelMain-context-box-rest-inactive {
+  height: auto;
+  overflow: hidden;
+  animation: fade-out 2.5s;
+  margin: 40px 20px;
+  font-size: 18px;
+}
+.adminpanelMain-context-box-rest-btn-edit {
+  height: 60px;
+  width: 200px;
+  background-color: #008cba;
+  float: right;
+  color: white;
+  font-size: 24px;
+  margin: 30px;
+  border: none;
+}
+.adminpanelMain-context-box-rest-btn-delete {
+  height: 60px;
+  width: 200px;
+  background-color: #f44336;
+  color: white;
+  float: right;
+  font-size: 24px;
+  margin: 30px;
+  border: none;
+}
+.adminpanelMain-context-box-rest-btn-save {
+  height: 60px;
+  width: 200px;
+  background-color: #2acc4d;
+  color: white;
+  float: right;
+  font-size: 24px;
+  margin: 30px;
+  border: none;
+}
+.adminpanelMain-context-box-rest-btn-save:hover {
+  background-color: #26b445;
+  cursor: pointer;
+}
+.adminpanelMain-context-box-rest-btn-edit:hover {
+  background-color: #037094;
+  cursor: pointer;
+}
+.adminpanelMain-context-box-rest-btn-delete:hover {
+  background-color: #c9382e;
+  cursor: pointer;
+}
+.newsMain-loading {
+  text-align: center;
+  margin: 300px auto;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*Posty istniejące*/
+@media screen and (max-width: 1800px) {
+  .adminpanelMain-context-button {
+    margin-top: 60px;
+    width: 20%;
+  }
+  .adminpanelMain-context-text {
+    width: 50%;
+  }
+  .adminpanelMain-context-img2 > img {
+    width: 100%;
+  }
+  .adminpanelMain-context-carousel-img {
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .adminpanelMain-context-button > button {
+    width: 90px;
+    height: 90px;
+  }
+  .adminpanelMain-context-button {
+    margin-top: 30px;
+  }
+  .adminpanelMain-context-box-rest-btn-edit {
+    width: 150px;
+    height: 60px;
+    margin: 20px;
+  }
+  .adminpanelMain-context-box-rest-btn-delete {
+    width: 150px;
+    height: 60px;
+    margin: 20px;
+  }
+  .adminpanelMain-context-box-arrow {
+    width: 80px;
+    height: 80px;
+  }
+  .adminpanelMain-context-box-arrow-active {
+    width: 80px;
+    height: 80px;
+  }
+  .adminpanelMain-context-text > h2 {
+    font-size: 24px;
+  }
+  .adminpanelMain-context-dateauthor {
+    font-size: 18px;
+  }
+  .adminpanelMain-context-img {
+    width: 40%;
+  }
+  .adminpanelMain-context-text {
+    width: 40%;
+  }
+  .adminpanelMain-context-carousel-img {
+    height: 120px;
+  }
+  .adminpanelMain-context-box-rest {
+    font-size: 14px;
+  }
+}
+/*Dodanie Postów*/
+@media screen and (max-width: 1800px) {
+  .adminpanelMain-headline {
+    font-size: 24px;
+    height: 60px;
+  }
+  .adminpanelMain-textarea {
+    font-size: 18px;
+    height: 200px;
+  }
+  .adminpanelMain-context-labelimage > label > svg {
+    width: 240px;
+    height: 240px;
+  }
+  .adminpanelMain-button {
+    margin: 0px;
+    margin-top: 40px;
+    width: 90%;
+  }
+  .adminpanelMain-button > button {
+    width: 320px;
+    height: 80px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .adminpanelMain-headline {
+    font-size: 18px;
+    height: 40px;
+  }
+  .adminpanelMain-textarea {
+    font-size: 12px;
+    height: 160px;
+  }
+  .adminpanelMain-context-labelimage > label > svg {
+    width: 120px;
+    height: 120px;
+  }
+  .adminpanelMain-context-labelimage {
+    width: 100%;
+  }
+  .adminpanelMain-context-labelimage-headline {
+    font-size: 24px;
+  }
+  .adminpanelMain-button {
+    margin: 0px;
+    margin-top: 40px;
+    width: 90%;
+  }
+  .adminpanelMain-button > button {
+    width: 220px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .adminpanelMain-context-show > h1 {
+    font-size: 24px;
+    height: 40px;
+  }
+  .adminpanelMain-context-show {
+    width: 85%;
+    float: none;
+  }
+  .adminpanelMain-context-input {
+    width: 100%;
+    float: none;
+  }
+}

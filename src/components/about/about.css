@@ -1,0 +1,235 @@
+.aboutMain-header {
+  text-align: center;
+}
+.aboutMain-header > h1 {
+  font-size: 42px;
+}
+.aboutMain-header > hr {
+  height: 5px;
+  width: 60%;
+  background-color: #000069;
+  border: none;
+}
+.aboutMain-header > p {
+  font-size: 32px;
+  padding: 30px;
+}
+.aboutMain-context {
+  margin: 0 auto;
+  width: 80%;
+}
+.aboutMain-nav {
+  width: 80%;
+  margin: 0 auto;
+  height: 50px;
+}
+.aboutMain-nav > ul > li {
+  width: 25%;
+  float: left;
+  list-style: none;
+  text-align: center;
+}
+.aboutMain-nav > ul > li:hover {
+  cursor: pointer;
+}
+.aboutMain-nav > ul {
+  padding: 0px;
+}
+.aboutMain-slider {
+  background-color: transparent;
+  border-bottom: 3px solid black;
+  transition: transform 0.5s;
+  width: 25%;
+  padding-top: 40px;
+}
+.aboutMain-context-komendaHufca,
+.aboutMain-context-komisjaRewizyjna,
+.aboutMain-context-jednostki {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.aboutMain-context-komendaHufca-main,
+.aboutMain-context-zespoly-main-context-mainImage {
+  text-align: center;
+  margin: 0 auto;
+}
+.aboutMain-context-komendaHufca-main > h3,
+.aboutMain-context-zespoly-main-context-mainImage > h3 {
+  color: #000069;
+}
+.aboutMain-context-komendaHufca-rest,
+.aboutMain-context-zespoly-main-context-restImage {
+  width: 100%;
+  margin: 100px 0px;
+}
+.aboutMain-context-komendaHufca-rest-box {
+  float: left;
+  text-align: center;
+  width: 33%;
+}
+.aboutMain-context-zespoly-main-context-restImage-box {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+.aboutMain-context-zespoly-main-context-restImage-box > p:nth-child(3),
+.aboutMain-context-komendaHufca-rest-box > p:nth-child(3) {
+  color: #000069;
+  font-weight: 700;
+}
+.aboutMain-context-jednostki-szczepy > h1 {
+  text-align: center;
+  color: #000069;
+  font-size: 36px;
+  margin: 50px 0px;
+}
+.aboutMain-context-jednostki-szczepy-main-box {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+.aboutMain-context-jednostki-szczepy-main {
+  margin: 0 auto;
+}
+.aboutMain-context-jednostki > hr {
+  width: 80%;
+  color: #eee;
+  margin: 50px auto;
+}
+.aboutMain-context-jednostki-main {
+  margin: 0px auto;
+}
+.aboutMain-context-jednostki-main > h1 {
+  text-align: center;
+  color: #000069;
+  font-size: 36px;
+  margin: 50px 0px;
+}
+.aboutMain-context-jednostki-main-boxes {
+  margin: 0 auto;
+}
+.aboutMain-context-jednostki-main-boxes-box {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+.aboutMain-context-jednostki-main-boxes-box > p:nth-child(4) {
+  color: #000069;
+  font-weight: 700;
+}
+
+.aboutMain-context-zespoly-main-list > ul {
+  list-style: none;
+  padding: 0px;
+  width: 100%;
+  height: 160px;
+  border: 1px solid #000069;
+}
+
+.aboutMain-context-zespoly-main-list-li-active {
+  width: 28%;
+  float: left;
+  text-align: center;
+  padding: 10px 2.66%;
+  height: 60px;
+  background-color: white;
+  color: #000069;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+.aboutMain-context-zespoly-main-list-li {
+  width: 28%;
+  float: left;
+  text-align: center;
+  padding: 10px 2.66%;
+  height: 60px;
+  background-color: #000069;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1800px) {
+  .aboutMain-context-komendaHufca-main > img,
+  .aboutMain-context-zespoly-main-context-mainImage > img {
+    height: 280px;
+  }
+  .aboutMain-context-komendaHufca-main > h3,
+  .aboutMain-context-zespoly-main-context-mainImage > h3 {
+    font-size: 18px;
+  }
+  .aboutMain-context-komendaHufca-main > h1,
+  .aboutMain-context-zespoly-main-context-mainImage > h1 {
+    font-size: 26px;
+  }
+  .aboutMain-context-komendaHufca-rest-box > img {
+    height: 200px;
+  }
+  .aboutMain-context-zespoly-main-context-restImage-box > img {
+    height: 240px;
+  }
+  .aboutMain-context-zespoly-main-context-restImage-box {
+    font-size: 16px;
+  }
+  .aboutMain-context-jednostki-szczepy-main-box,
+  .aboutMain-context-komendaHufca-rest-box {
+    font-size: 14px;
+  }
+  .aboutMain-context-jednostki-szczepy-main-box > img {
+    height: 120px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .aboutMain {
+    width: 100%;
+  }
+  .aboutMain-nav {
+    width: 100%;
+  }
+  .aboutMain-context {
+    width: 100%;
+  }
+  .aboutMain-context-komendaHufca-main > img,
+  .aboutMain-context-zespoly-main-context-mainImage > img {
+    height: 240px;
+  }
+  .aboutMain-context-komendaHufca-main > h3,
+  .aboutMain-context-zespoly-main-context-mainImage > h3 {
+    font-size: 16px;
+  }
+  .aboutMain-context-komendaHufca-main > h1,
+  .aboutMain-context-zespoly-main-context-mainImage > h1 {
+    font-size: 24px;
+  }
+  .aboutMain-context-komendaHufca-rest-box > img {
+    height: 160px;
+  }
+  .aboutMain-context-zespoly-main-context-restImage-box > img {
+    height: 200px;
+  }
+  .aboutMain-context-zespoly-main-context-restImage-box {
+    font-size: 14px;
+  }
+  .aboutMain-context-jednostki-szczepy-main-box,
+  .aboutMain-context-komendaHufca-rest-box {
+    font-size: 12px;
+  }
+  .aboutMain-context-jednostki-szczepy-main-box > img {
+    height: 90px;
+  }
+  .aboutMain-context-jednostki-main-boxes-box > h1 {
+    font-size: 24px;
+  }
+  .aboutMain-context-jednostki-main-boxes-box > p {
+    font-size: 14px;
+  }
+  .aboutMain-context-jednostki > hr {
+    width: 100%;
+  }
+  .aboutMain-context-zespoly-main-context > h1 {
+    margin-left: 20px;
+  }
+}
