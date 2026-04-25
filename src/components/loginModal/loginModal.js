@@ -22,7 +22,7 @@ const LoginModal = () => {
       localStorage.setItem("token", token);
       navigate(`/adminzhp/${token}`);
     } else {
-      console.log("Zły");
+      console.log("Podano błędną nazwę użytkownika lub hasło");
       SetErr("Podano błędną nazwę użytkownika lub hasło");
     }
   };

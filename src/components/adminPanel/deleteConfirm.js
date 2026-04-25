@@ -8,7 +8,7 @@ const DeleteConfirm = ({ setShowConfirm }) => {
   const handleDelete = () => {
     console.log("Usuwanie posta z id: " + id);
     axios
-      .delete(`http://localhost:3001/news/${tokenId}/${id}`)
+      .delete(`https://microtest.toadres.pl/api/news/${tokenId}/${id}`)
 
       .then((res) => {
         console.log("Usuwanie posta z id: " + id);

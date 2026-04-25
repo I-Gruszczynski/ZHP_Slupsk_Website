@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import { BsPersonCircle } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import "./about.css";
 
 const About = () => {
   const sliderRef = useRef();
+  const navigate = useNavigate();
 
   const [komendaHufca, setKomendaHufca] = useState(true);
   const [komisjaRewizyjna, setKomisjaRewizyjna] = useState(false);
@@ -17,12 +19,15 @@ const About = () => {
   const [zespolKadry, setZespolKadry] = useState(false);
   const [namiestnictwa, setNamiestnictwa] = useState(false);
 
+  const handleCountryClick = (countryName) => {
+    navigate(`/country/${encodeURIComponent(countryName)}`);
+  };
+
   return (
     <div className="aboutMain">
       <div className="aboutMain-header">
-        <h1>O nas</h1>
+        <h1>Zwiedzone kraje</h1>
         <hr />
-        <p>Hufiec ZHP Ziemi Słupskiej</p>
       </div>
       <div className="aboutMain-nav">
         <ul>
@@ -35,7 +40,7 @@ const About = () => {
               sliderRef.current.style.transform = "translateX(0%)";
             }}
           >
-            Komenda Hufca
+            Europa
           </li>
           <li
             onClick={() => {
@@ -46,7 +51,7 @@ const About = () => {
               sliderRef.current.style.transform = "translateX(100%)";
             }}
           >
-            Komisja Rewizyjna
+            Azja
           </li>
           <li
             onClick={() => {
@@ -57,7 +62,7 @@ const About = () => {
               sliderRef.current.style.transform = "translateX(200%)";
             }}
           >
-            Jednostki
+            Ameryka
           </li>
           <li
             onClick={() => {
@@ -68,7 +73,7 @@ const About = () => {
               sliderRef.current.style.transform = "translateX(300%)";
             }}
           >
-            Zespoły instruktorskie
+            Afryka
           </li>
         </ul>
         <div className="aboutMain-slider" ref={sliderRef}></div>
@@ -76,395 +81,218 @@ const About = () => {
       <div className="aboutMain-context">
         {komendaHufca && (
           <div className="aboutMain-context-komendaHufca">
-            <div className="aboutMain-context-komendaHufca-main">
-              <h1>Komendantka Hufca Ziemi Słupskiej</h1>
-              <BsPersonCircle size={320} color="#000069" />
-              <h1>Natalia Przybyszewska</h1>
-              <h3>email: nataprzy@gmail.com</h3>
+            <h1>Europa</h1>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Hiszpania")}
+            >
+              <img src="./images/Flag_of_Spain.svg.png" alt="Flag of Spain" />
+              <p>Hiszpania</p>
             </div>
-
-            <div className="aboutMain-context-komendaHufca-rest">
-              <div className="aboutMain-context-komendaHufca-rest-box">
-                <BsPersonCircle size={320} color="#000069" />
-                <p>Natalia Przybyszewska</p>
-                <p>email: nataprzy@gmail.com</p>
-              </div>
-              <div className="aboutMain-context-komendaHufca-rest-box">
-                <BsPersonCircle size={320} color="#000069" />
-                <p>Natalia Przybyszewska</p>
-                <p>email: nataprzy@gmail.com</p>
-              </div>
-              <div className="aboutMain-context-komendaHufca-rest-box">
-                <BsPersonCircle size={320} color="#000069" />
-                <p>Natalia Przybyszewska</p>
-                <p>email: nataprzy@gmail.com</p>
-              </div>
-              <div style={{ clear: "both" }}></div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Portugalia")}
+            >
+              <img
+                src="./images/Flag_of_Portugal.svg.png"
+                alt="Flag of Portugal"
+              />
+              <p>Portugalia</p>
             </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Gibraltar")}
+            >
+              <img
+                src="./images/Flag_of_Gibraltar.svg.png"
+                alt="Flag of Gibraltar"
+              />
+              <p>Gibraltar</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Belgia")}
+            >
+              <img
+                src="./images/Flag_of_Belgium.svg.png"
+                alt="Flag of Belgium"
+              />
+              <p>Belgia</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Finlandia")}
+            >
+              <img
+                src="./images/Flag_of_Finland.svg.png"
+                alt="Flag of Finland"
+              />
+              <p>Finlandia</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Norwegia")}
+            >
+              <img src="./images/Flag_of_Norway.svg.png" alt="Flag of Norway" />
+              <p>Norwegia</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Czarnogóra")}
+            >
+              <img
+                src="./images/Flag_of_Montenegro.svg.png"
+                alt="Flag of Montenegro"
+              />
+              <p>Czarnogóra</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Serbia")}
+            >
+              <img src="./images/Flag_of_Serbia.svg.png" alt="Flag of Serbia" />
+              <p>Serbia</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Rumunia")}
+            >
+              <img
+                src="./images/Flag_of_Romania.svg.png"
+                alt="Flag of Romania"
+              />
+              <p>Rumunia</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Włochy")}
+            >
+              <img src="./images/Flag_of_Italy.svg.png" alt="Flag of Italy" />
+              <p>Włochy</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Bułgaria")}
+            >
+              <img
+                src="./images/Flag_of_Bulgaria.svg.png"
+                alt="Flag of Bulgaria"
+              />
+              <p>Bułgaria</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Francja")}
+            >
+              <img src="./images/Flag_of_France.svg.png" alt="Flag of France" />
+              <p>Francja</p>
+            </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Austria")}
+            >
+              <img
+                src="./images/Flag_of_Austria.svg.png"
+                alt="Flag of Austria"
+              />
+              <p>Austria</p>
+            </div>
+            <div style={{ clear: "both" }}></div>
           </div>
         )}
         {komisjaRewizyjna && (
           <div className="aboutMain-context-komisjaRewizyjna">
-            <div className="aboutMain-context-zespoly-main-context-mainImage">
-              <h1>Komendantka Hufca Ziemi Słupskiej</h1>
-              <BsPersonCircle size={320} color="#000069" />
-              <h1>Natalia Przybyszewska</h1>
-              <h3>email: nataprzy@gmail.com</h3>
+            <h1>Azja</h1>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Chiny")}
+            >
+              <img
+                src="./images/Flag_of_the_People's_Republic_of_China.svg.png"
+                alt="Flag of China"
+              />
+              <p>Chiny</p>
             </div>
-
-            <div className="aboutMain-context-zespoly-main-context-restImage">
-              <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                <BsPersonCircle size={320} color="#000069" />
-                <p>Natalia Przybyszewska</p>
-                <p>email: nataprzy@gmail.com</p>
-              </div>
-              <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                <BsPersonCircle size={320} color="#000069" />
-                <p>Natalia Przybyszewska</p>
-                <p>email: nataprzy@gmail.com</p>
-              </div>
-
-              <div style={{ clear: "both" }}></div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Japonia")}
+            >
+              <img src="./images/Flag_of_Japan.svg.png" alt="Flag of Japan" />
+              <p>Japonia</p>
             </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Zjednoczone Emiraty Arabskie")}
+            >
+              <img
+                src="./images/Flag_of_the_United_Arab_Emirates.svg.png"
+                alt="Flag of United Arab Emirates"
+              />
+              <p>Zjednoczone Emiraty Arabskie</p>
+            </div>
+            <div style={{ clear: "both" }}></div>
           </div>
         )}
         {jednostki && (
           <div className="aboutMain-context-jednostki">
-            <div className="aboutMain-context-jednostki-szczepy">
-              <h1>Szczepy</h1>
-              <div className="aboutMain-context-jednostki-szczepy-main">
-                <div className="aboutMain-context-jednostki-szczepy-main-box">
-                  <BsPersonCircle size={200} color="#000069" />
-                  <p>Szczep Ognia</p>
-                </div>
-                <div className="aboutMain-context-jednostki-szczepy-main-box">
-                  <BsPersonCircle size={200} color="#000069" />
-                  <p>Szczep Wody</p>
-                </div>
-                <div className="aboutMain-context-jednostki-szczepy-main-box">
-                  <BsPersonCircle size={200} color="#000069" />
-                  <p>Szczep Ziemi</p>
-                </div>
-                <div className="aboutMain-context-jednostki-szczepy-main-box">
-                  <BsPersonCircle size={200} color="#000069" />
-                  <p>Szczep Wiatru</p>
-                </div>
-                <div className="aboutMain-context-jednostki-szczepy-main-box">
-                  <BsPersonCircle size={200} color="#000069" />
-                  <p>Szczep Avatara</p>
-                </div>
-                <div style={{ clear: "both" }}></div>
-              </div>
+            <h1>Ameryka</h1>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Stany Zjednoczone")}
+            >
+              <img
+                src="./images/Flag_of_the_United_States.svg.png"
+                alt="Flag of United States"
+              />
+              <p>Stany Zjednoczone</p>
             </div>
-            <hr />
-            <div className="aboutMain-context-jednostki-main">
-              <h1>Jednostki</h1>
-              <div className="aboutMain-context-jednostki-main-boxes">
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div className="aboutMain-context-jednostki-main-boxes-box">
-                  <h1>Jednostka Strzelca</h1>
-                  <p>Drużynowa</p>
-                  <p>pwd. Weronika Połomska</p>
-                  <p>waero@gmail.com</p>
-                  <p>Miejsce działania: Gdańsk</p>
-                </div>
-                <div style={{ clear: "both" }}></div>
-              </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Puerto Rico")}
+            >
+              <img
+                src="./images/Flag_of_Puerto_Rico.svg.png"
+                alt="Flag of Puerto Rico"
+              />
+              <p>Puerto Rico</p>
             </div>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Jamajka")}
+            >
+              <img
+                src="./images/Flag_of_Jamaica.svg.png"
+                alt="Flag of Jamaica"
+              />
+              <p>Jamajka</p>
+            </div>
+            <div style={{ clear: "both" }}></div>
           </div>
         )}
         {zespolyInstruktorskie && (
-          <div className="aboutMain-context-zespoly-main">
-            <div className="aboutMain-context-zespoly-main-list">
-              <ul>
-                <li
-                  className={
-                    komisjaStopniInstr === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(true);
-                    setBiuroOrganizacji(false);
-                    setPromocja(false);
-                    setKapitulaStopni(false);
-                    setZespolKadry(false);
-                    setNamiestnictwa(false);
-                  }}
-                >
-                  Komisja Stopni Instruktorskich
-                </li>
-                <li
-                  className={
-                    biuroOrganizacji === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(false);
-                    setBiuroOrganizacji(true);
-                    setPromocja(false);
-                    setKapitulaStopni(false);
-                    setZespolKadry(false);
-                    setNamiestnictwa(false);
-                  }}
-                >
-                  Biuro Organizacji i Komunikacji
-                </li>
-                <li
-                  className={
-                    promocja === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(false);
-                    setBiuroOrganizacji(false);
-                    setPromocja(true);
-                    setKapitulaStopni(false);
-                    setZespolKadry(false);
-                    setNamiestnictwa(false);
-                  }}
-                >
-                  Promocja
-                </li>
-                <li
-                  className={
-                    kapitulaStopni === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(false);
-                    setBiuroOrganizacji(false);
-                    setPromocja(false);
-                    setKapitulaStopni(true);
-                    setZespolKadry(false);
-                    setNamiestnictwa(false);
-                  }}
-                >
-                  Kapituła Stopni Wędrowniczych
-                </li>
-                <li
-                  className={
-                    zespolKadry === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(false);
-                    setBiuroOrganizacji(false);
-                    setPromocja(false);
-                    setKapitulaStopni(false);
-                    setZespolKadry(true);
-                    setNamiestnictwa(false);
-                  }}
-                >
-                  Zespół Kadry Kształcącej
-                </li>
-                <li
-                  className={
-                    namiestnictwa === true
-                      ? "aboutMain-context-zespoly-main-list-li-active"
-                      : "aboutMain-context-zespoly-main-list-li"
-                  }
-                  onClick={(e) => {
-                    setKomisjaStopniInstr(false);
-                    setBiuroOrganizacji(false);
-                    setPromocja(false);
-                    setKapitulaStopni(false);
-                    setZespolKadry(false);
-                    setNamiestnictwa(true);
-                  }}
-                >
-                  Namiestnictwa
-                </li>
-              </ul>
+          <div className="aboutMain-context-zespoly">
+            <h1>Afryka</h1>
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Maroko")}
+            >
+              <img
+                src="./images/Flag_of_Morocco.svg.png"
+                alt="Flag of Morocco"
+              />
+              <p>Maroko</p>
             </div>
-            {komisjaStopniInstr && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Komisja Stopni</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
-            {biuroOrganizacji && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Biuro Organizacji</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
-            {promocja && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Promocja</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
-            {kapitulaStopni && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Kapituła Stopni</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
-            {zespolKadry && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Zespół Kadry</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
-            {namiestnictwa && (
-              <div className="aboutMain-context-zespoly-main-context">
-                <h1>Namiestnictwa</h1>
-                <div className="aboutMain-context-zespoly-main-context-mainImage">
-                  <BsPersonCircle size={320} color="#000069" />
-                  <h2>Natalia Przybyszewska</h2>
-                  <p>email: nataprzy@gmail.com</p>
-                </div>
-
-                <div className="aboutMain-context-zespoly-main-context-restImage">
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-                  <div className="aboutMain-context-zespoly-main-context-restImage-box">
-                    <BsPersonCircle size={320} color="#000069" />
-                    <h2>Natalia Przybyszewska</h2>
-                    <p>email: nataprzy@gmail.com</p>
-                  </div>
-
-                  <div style={{ clear: "both" }}></div>
-                </div>
-              </div>
-            )}
+            <div
+              className="aboutMain-context-country"
+              onClick={() => handleCountryClick("Tunezja")}
+            >
+              <img
+                src="./images/Flag_of_Tunisia.svg.png"
+                alt="Flag of Tunisia"
+              />
+              <p>Tunezja</p>
+            </div>
+            <div style={{ clear: "both" }}></div>
           </div>
         )}
       </div>

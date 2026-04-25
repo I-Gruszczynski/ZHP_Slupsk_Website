@@ -90,7 +90,7 @@
   color: white;
   list-style-type: none;
   width: 25%;
-  font-weight: bold;
+
   font-size: 22px;
   text-align: center;
 }
@@ -98,7 +98,7 @@
   color: grey;
   list-style-type: none;
   width: 25%;
-  font-weight: bold;
+
   font-size: 22px;
   text-align: center;
   text-decoration: none;
@@ -109,7 +109,7 @@
   color: white;
   list-style-type: none;
   width: 25%;
-  font-weight: bold;
+
   font-size: 22px;
   text-align: center;
   text-decoration: none;
@@ -131,7 +131,6 @@
   margin-top: -20%;
   background-color: white;
   height: auto;
-  min-height: 1200px;
   padding: 40px 100px;
   position: relative;
 }
@@ -167,19 +166,19 @@
   text-align: center;
   padding: 100px;
   height: 100px;
+  width: auto;
 }
 .App-footer {
   height: 80px;
-  vertical-align: middle;
+  padding-top: 20px;
   text-align: center;
   background-color: black;
   color: white;
-  line-height: 80px;
 }
 .App-background-title {
   position: absolute;
   margin: auto;
-  font-size: 72px;
+  font-size: 68px;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,6 +188,8 @@
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   word-spacing: 5px;
   letter-spacing: 5px;
+  text-align: center;
+  width: 100%;
 }
 .App-background-title-bottom {
   position: absolute;
@@ -203,9 +204,27 @@
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   word-spacing: 5px;
   letter-spacing: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 2200px) {
+  .App-background-title {
+    font-size: 48px;
+  }
+}
+.App-background-title-bottom {
+  font-size: 24px;
 }
 
 @media screen and (max-width: 1200px) {
+  .App-background-title {
+    font-size: 32px;
+  }
+
+  .App-background-title-bottom {
+    font-size: 20px;
+  }
   .App-header-logo {
     float: left;
     width: 25%;
@@ -259,6 +278,15 @@
 }
 
 @media screen and (max-width: 800px) {
+  .App-background-title {
+    font-size: 26px;
+    top: 45%;
+  }
+
+  .App-background-title-bottom {
+    font-size: 12px;
+    top: 60%;
+  }
   .App-header-menu {
     display: none;
   }
@@ -266,7 +294,7 @@
     display: block;
     float: right;
   }
-  .App-header-logo > img {
+  .App-header-logo > a > img {
     height: 40px;
   }
   .App-background > img {
@@ -276,21 +304,65 @@
     overflow: hidden;
   }
   .App-header {
-    padding: 30px 100px;
+    padding: 30px 20px;
     height: 30px;
-    width: 80%;
   }
   .App-terrain {
     background-color: #000069;
-    height: 300px;
+    height: 250px;
     margin: 50px 0px;
     color: white;
-    padding: 50px 10%;
+    padding: 10px 10%;
     font-size: 20px;
     font-weight: 600;
   }
+  .App-terrain > h1 {
+    font-size: 26px;
+  }
+  .App-terrain > p {
+    font-size: 16px;
+  }
   .App-context {
-    width: 100%;
+    width: 90%;
     margin: 0px;
+  }
+  .App-sponsors > img {
+    width: 100%;
+  }
+  .App-sponsors-more > img {
+    height: 40px;
+    padding: 20px 20px;
+    width: 90%;
+  }
+
+  .newsMain-header > h1 {
+    font-size: 32px;
+  }
+  .newsMain-header > hr {
+    width: 80%;
+  }
+  .newsMain-context-box > h1 {
+    font-size: 24px;
+  }
+  .newsMain-context-box-dateauthor > svg {
+    height: 20px;
+  }
+  .newsMain-context-box-dateauthor > h3 {
+    height: 12px;
+    margin: 4px 10px 20px 0px;
+  }
+  .newsMain-context-box-p {
+    margin: 0px;
+  }
+  .newsMain-context-box-button > a > button {
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+  }
+  .App-footer {
+    height: 50px;
+  }
+  .App-footer > p {
+    font-size: 10px;
   }
 }

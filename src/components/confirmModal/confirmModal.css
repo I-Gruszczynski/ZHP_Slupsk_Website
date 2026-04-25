@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 .confirmModal-main {
   position: relative;
@@ -17,6 +18,7 @@
   height: 650px;
   text-align: center;
   border-radius: 20px;
+  z-index: 2;
 }
 .confirmModal-main > button {
   width: 90%;
@@ -31,15 +33,27 @@
   margin: 20px 0px;
 }
 .confirmModal-main > button:hover {
-  width: 90%;
-  height: 60px;
   background-color: white;
   color: #000069;
   cursor: pointer;
-  font-size: 28px;
-  text-transform: uppercase;
-  font-weight: 500;
   border: 1px solid #000069;
-  border-radius: 20px;
-  margin: 20px 0px;
+}
+@media screen and (max-width: 800px) {
+  .confirmModal-main {
+    width: 300px;
+    height: 360px;
+  }
+  .confirmModal-main > svg {
+    width: 150px;
+    height: 150px;
+  }
+  .confirmModal-main > button {
+    width: 80%;
+    height: 50px;
+    margin: 10px 0px;
+    font-size: 18px;
+  }
+  .confirmModal-main > h1 {
+    font-size: 24px;
+  }
 }

@@ -28,7 +28,11 @@ const Header = () => {
     <nav>
       <div className="App-header-logo">
         <Link to="/">
-          <img src="/images/logoZHP.png" alt="Logo ZHP" height={60} />
+          <img
+            src={"./images/logoTravel.png"}
+            alt="Logo IG_Travel"
+            height={65}
+          />
         </Link>
       </div>
 
@@ -82,15 +86,12 @@ const Header = () => {
           </li>
           <li>
             <Link to="/about" className="App-header-menu-list">
-              O nas
+              Zwiedzone kraje
             </Link>
           </li>
           <li>
-            <Link className="App-header-menu-list-disable">Działalność</Link>
-          </li>
-          <li>
             <Link to="/contact" className="App-header-menu-list">
-              Kontakt
+              O mnie
             </Link>
           </li>
         </ul>

@@ -5,6 +5,12 @@
   text-align: center;
   text-transform: uppercase;
 }
+.adminpanelMain-context-headline-mobile {
+  display: none;
+}
+.adminpanelMain-context-dateauthor-mobile {
+  display: none;
+}
 .adminpanelMain-nav {
   width: 100%;
   height: 100px;
@@ -59,6 +65,24 @@ input {
   font-size: 32px;
   height: 80px;
 }
+.adminpanelMain-category-con {
+  width: 170px;
+  height: 60px;
+  font-size: 18px;
+  color: #888;
+  background-color: #fff;
+  border: 1px solid #000069;
+  margin: 0px 10px 0px 10px;
+}
+.adminpanelMain-category {
+  width: 280px;
+  height: 60px;
+  font-size: 18px;
+  color: #888;
+  background-color: #fff;
+  border: 1px solid #000069;
+  margin: 0px 10px 0px 10px;
+}
 .adminpanelMain-context-headline {
   font-size: 32px;
   height: 80px;
@@ -66,6 +90,10 @@ input {
 .adminpanelMain-author {
   font-size: 22px;
   height: 40px;
+}
+.adminpanelMain-context-box-category > h3 {
+  margin: 10px;
+  float: left;
 }
 textarea {
   width: 90%;
@@ -175,7 +203,6 @@ textarea {
   cursor: pointer;
 }
 .adminpanelMain-context-box {
-  max-height: 300px;
   height: auto;
   margin: 50px;
   padding: 20px;
@@ -185,7 +212,6 @@ textarea {
 }
 
 .adminpanelMain-context-box-active {
-  max-height: 3000px;
   height: auto;
   margin: 50px;
   padding: 20px;
@@ -312,6 +338,7 @@ textarea {
   font-weight: 600;
   border-color: #f44336;
   margin-left: -40px;
+  z-index: 1;
 }
 .adminpanelMain-context-inputimage-buttonNew:hover {
   background-color: #c9382e;
@@ -416,21 +443,29 @@ textarea {
 
 @media screen and (max-width: 800px) {
   .adminpanelMain-context-button > button {
-    width: 90px;
-    height: 90px;
+    width: 40px;
+    height: 40px;
   }
   .adminpanelMain-context-button {
     margin-top: 30px;
   }
   .adminpanelMain-context-box-rest-btn-edit {
-    width: 150px;
-    height: 60px;
-    margin: 20px;
+    width: 40%;
+    height: 50px;
+    margin: 5%;
+    font-size: 18px;
   }
   .adminpanelMain-context-box-rest-btn-delete {
-    width: 150px;
-    height: 60px;
-    margin: 20px;
+    width: 40%;
+    height: 50px;
+    margin: 5%;
+    font-size: 18px;
+  }
+  .adminpanelMain-context-box-rest-btn-save {
+    width: 40%;
+    height: 50px;
+    margin: 5%;
+    font-size: 18px;
   }
   .adminpanelMain-context-box-arrow {
     width: 80px;
@@ -441,13 +476,7 @@ textarea {
     height: 80px;
   }
   .adminpanelMain-context-text > h2 {
-    font-size: 24px;
-  }
-  .adminpanelMain-context-dateauthor {
-    font-size: 18px;
-  }
-  .adminpanelMain-context-img {
-    width: 40%;
+    font-size: 12px;
   }
   .adminpanelMain-context-text {
     width: 40%;
@@ -455,8 +484,54 @@ textarea {
   .adminpanelMain-context-carousel-img {
     height: 120px;
   }
+  .adminpanelMain > h1 {
+    font-size: 22px;
+  }
+  .adminpanelMain-nav > ul > li {
+    font-size: 12px;
+    line-height: 50px;
+  }
+  .adminpanelMain-nav {
+    height: 50px;
+  }
+  .adminpanelMain-context > h1 {
+    font-size: 22px;
+  }
+  .adminpanelMain-context-box,
+  .adminpanelMain-context-box-active {
+    margin: 10px;
+    padding: 10px;
+  }
+  .adminpanelMain-context-button > button > svg {
+    width: 32px;
+    height: 36px;
+  }
+  .adminpanelMain-context-img {
+    width: 75%;
+    margin: 2.5%;
+  }
+  .adminpanelMain-context-text {
+    width: 0%;
+  }
+  .adminpanelMain-context-button {
+    width: 15%;
+    margin: 15% 2.5%;
+  }
+  .adminpanelMain-context-img-carousel {
+    width: 100%;
+  }
+  .adminpanelMain-context-dateauthor {
+    font-size: 10px;
+    margin: 0px 5px;
+  }
+  .adminpanelMain-context-dateauthor > svg {
+    width: 12px;
+    height: 12px;
+    margin: 0px;
+  }
   .adminpanelMain-context-box-rest {
     font-size: 14px;
+    margin: 0px 10px;
   }
 }
 /*Dodanie Postów*/
@@ -525,5 +600,28 @@ textarea {
   .adminpanelMain-context-input {
     width: 100%;
     float: none;
+  }
+  .adminpanelMain-context-headline-mobile {
+    display: block;
+  }
+  .adminpanelMain-context-headline-notmobile {
+    display: none;
+  }
+  .adminpanelMain-context-dateauthor-mobile {
+    display: block;
+    font-size: 22px;
+    color: #aaa;
+
+    width: auto;
+  }
+  .adminpanelMain-context-dateauthor {
+    display: none;
+  }
+  .adminpanelMain-context-headline {
+    font-size: 24px;
+    height: 60px;
+  }
+  textarea {
+    font-size: 14px;
   }
 }

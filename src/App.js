@@ -37,7 +37,7 @@ function App() {
           })`;
         }
       },
-      [backgroundBlack]
+      [backgroundBlack],
     );
   });
 
@@ -45,12 +45,12 @@ function App() {
     <div className="App">
       <div className="App-background">
         <h1 ref={backgroundTitle} className="App-background-title">
-          Hufiec zhp ziemi słupskiej
+          Osobisty blog podróżniczy
         </h1>
         <h3 ref={backgroundTitleBottom} className="App-background-title-bottom">
-          im. Obrońców Wybrzeża
+          Igor Gruszczyński
         </h3>
-        <img src="/images/backgroundApp.jpg" alt="Background" />
+        <img src={"./images/Image_20250320075007.jpg"} alt="Background" />
 
         <div ref={backgroundBlack} className="App-background-black">
           <header ref={appHeader} className="App-header">
@@ -61,7 +61,16 @@ function App() {
       <div className="App-context">
         <Routes>
           <Route path="/" element={<News />} />
+          <Route path="/main" element={<News />} />
+          <Route path="/main/country/:countryName" element={<News />} />
+          <Route path="/country/:countryName" element={<News />} />
           <Route path="/:id" element={<NewsDetails />} />
+          <Route path="/main/:id" element={<NewsDetails />} />
+          <Route
+            path="/main/country/:countryName/:id"
+            element={<NewsDetails />}
+          />
+          <Route path="/country/:countryName/:id" element={<NewsDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/adminzhp" element={<LoginModal />} />
@@ -69,35 +78,10 @@ function App() {
           <Route path="/adminzhp/:tokenId/:id" element={<AdminPanel />} />
         </Routes>
       </div>
-      <div className="App-terrain">
-        <h1>Tereny działania</h1>
-        <p>Powiat słupski z siedzibą w Słupsku:</p>
-        <p>Miasta: Słupsk, Ustka</p>
-        <p>
-          Gminy: Damnica, Dębnica Kaszubska, Główczyce, Kobylnica, Potęgowo,
-          <br />
-          Słupsk, Smołdzino, Ustka.
-        </p>
-      </div>
-      <div className="App-sponsors">
-        <img src={"./images/logoSponsorApp.png"} alt="Sponsorzy" height={240} />
-      </div>
-      <div className="App-sponsors-more">
-        <img
-          src={"./images/identyfikator_zhp1.png"}
-          alt="identyfikator_zhp1"
-          height={60}
-        />
-        <img
-          src={"./images/identyfikator_zhp2.png"}
-          alt="identyfikator_zhp2"
-          height={60}
-        />
-        <img src={"./images/bip_zhp.png"} alt="bip_zhp" height={60} />
-      </div>
       <div className="App-footer">
-        Prawa autorskie © 2024 Hufiec ZHP Ziemi Słupskiej. Wszelkie prawa
-        zastrzeżone
+        <p>
+          Prawa autorskie © 2025 Igor Gruszczyński. Wszelkie prawa zastrzeżone.
+        </p>
       </div>
     </div>
   );

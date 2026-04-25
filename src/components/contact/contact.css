@@ -9,6 +9,7 @@
   width: 60%;
   background-color: #000069;
   border: none;
+  margin-bottom: 40px;
 }
 .contactMain-header > p {
   font-size: 32px;
@@ -16,10 +17,16 @@
 }
 .contactMain-context {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
+}
+.contactMain-img {
+  width: 40%;
+}
+.contactMain-img > img {
+  width: 90%;
 }
 .contactMain-context-text {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 .contactMain-context-left {
@@ -43,6 +50,17 @@
 }
 .contactMain-socialmedia > p {
   font-size: 24px;
+}
+.contactMain-socialmedia > a > img {
+  margin: 0px 10px;
+}
+.contactMain-img {
+  width: 40%;
+  float: left;
+}
+.contactMain-text {
+  width: 60%;
+  float: left;
 }
 
 @media screen and (max-width: 1200px) {

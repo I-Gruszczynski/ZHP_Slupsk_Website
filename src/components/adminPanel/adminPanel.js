@@ -20,6 +20,10 @@ const AdminPanel = () => {
   const { tokenId } = useParams();
   const { id } = useParams();
 
+  var randomColor = require("randomcolor");
+
+  const [continent, setContinent] = useState("");
+  const [country, setCountry] = useState("");
   const [title, setTitle] = useState("");
   const [context, setContext] = useState("");
   const [author, setAuthor] = useState("");
@@ -28,6 +32,8 @@ const AdminPanel = () => {
   //const [image, setImage] = useState([]);
 
   const [titleEdit, setTitleEdit] = useState("");
+  const [continentEdit, setContinentEdit] = useState("");
+  const [countryEdit, setContryEdit] = useState("");
   const [contextEdit, setContextEdit] = useState("");
   const [authorEdit, setAuthorEdit] = useState("");
   const [fileEdit, setFileEdit] = useState([]);
@@ -56,6 +62,8 @@ const AdminPanel = () => {
     formData.append("title", title);
     formData.append("context", context);
     formData.append("author", author);
+    formData.append("continent", continent);
+    formData.append("country", country);
 
     [...e.target.files.files].map((file, i) => {
       formData.append("files", file);
@@ -65,7 +73,7 @@ const AdminPanel = () => {
     setShowSend(true);
 
     axios
-      .post(`http://localhost:3001/news`, formData, {
+      .post(`https://microtest.toadres.pl/api/news`, formData, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
@@ -89,6 +97,8 @@ const AdminPanel = () => {
 
     formData.append("title", titleEdit);
     formData.append("context", contextEdit);
+    formData.append("continent", continentEdit);
+    formData.append("country", countryEdit);
     console.log(e.target.files);
     [...e.target.files.files].map((file, i) => {
       formData.append("files", file);
@@ -96,7 +106,7 @@ const AdminPanel = () => {
     });
 
     axios
-      .put(`http://localhost:3001/news/${tokenId}/${id}`, formData, {
+      .put(`https://microtest.toadres.pl/api/news/${tokenId}/${id}`, formData, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
@@ -119,11 +129,15 @@ const AdminPanel = () => {
     formData.append("files", img.filename);
     console.log(JSON.stringify(img));
     axios
-      .put(`http://localhost:3001/news/${tokenId}/${id}/image`, formData, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+      .put(
+        `https://microtest.toadres.pl/api/news/${tokenId}/${id}/image`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         },
-      })
+      )
 
       .then((res) => {
         console.log("Usuwanie zdjecia posta o id: " + id);
@@ -149,7 +163,7 @@ const AdminPanel = () => {
     }
 
     axios
-      .get(`http://localhost:3001/news`)
+      .get(`https://microtest.toadres.pl/api/news`)
       .then((news) => setAllNews(news.data), setLoading(false))
       .catch((err) => console.log(err));
   }, [navigate, tokenId]);
@@ -202,6 +216,88 @@ const AdminPanel = () => {
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
               /> */}
+              <label>Kategoria</label>
+              <select
+                className="adminpanelMain-category-con"
+                name="continent"
+                value={continent}
+                onChange={(e) => setContinent(e.target.value)}
+              >
+                <option value="-" selected>
+                  Brak kategorii
+                </option>
+                <option value="Europa">Europa</option>
+                <option value="Azja">Azja</option>
+                <option value="Afryka">Afryka</option>
+                <option value="Ameryka">Ameryka</option>
+              </select>
+              {continent == "Europa" && (
+                <select
+                  className="adminpanelMain-category"
+                  name="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value="Hiszpania" selected>
+                    Hiszpania
+                  </option>
+                  <option value="Portugalia">Portugalia</option>
+                  <option value="Gibraltar">Gibraltar</option>
+                  <option value="Belgia">Belgia</option>
+                  <option value="Finlandia">Finlandia</option>
+                  <option value="Norwegia">Norwegia</option>
+                  <option value="Czarnogóra">Czarnogóra</option>
+                  <option value="Serbia">Serbia</option>
+                  <option value="Romania">Romania</option>
+                  <option value="Włochy">Włochy</option>
+                  <option value="Bułgaria">Bułgaria</option>
+                  <option value="Francja">Francja</option>
+                  <option value="Austria">Austria</option>
+                </select>
+              )}
+              {continent == "Azja" && (
+                <select
+                  className="adminpanelMain-category"
+                  name="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value="Chiny" selected>
+                    Chiny
+                  </option>
+                  <option value="Japonia">Japonia</option>
+                  <option value="Zjednoczone Emiraty Arabskie">
+                    Zjednoczone Emiraty Arabskie
+                  </option>
+                </select>
+              )}
+              {continent == "Ameryka" && (
+                <select
+                  className="adminpanelMain-category"
+                  name="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value="Strany Zjednoczone Ameryki" selected>
+                    Strany Zjednoczone Ameryki
+                  </option>
+                  <option value="Puerto Rico">Puerto Rico</option>
+                  <option value="Jamajka">Jamajka</option>
+                </select>
+              )}
+              {continent == "Afryka" && (
+                <select
+                  className="adminpanelMain-category"
+                  name="country"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value="Maroko" selected>
+                    Maroko
+                  </option>
+                  <option value="Tunezja">Tunezja</option>
+                </select>
+              )}
               <div className="adminpanelMain-context-labelimage1">
                 <div className="adminpanelMain-context-labelimage">
                   <label htmlFor="adminpanelMain-context-inputimage">
@@ -273,6 +369,10 @@ const AdminPanel = () => {
             <h1>{title}</h1>
             {/* <label>Autor</label>
             <h4>{author}</h4> */}
+            <label>Kategoria</label>
+            <h3>
+              {continent} {country}
+            </h3>
             <label>Załączone zdjęcie</label>
             <p className="cont"></p>
             <label>Treść</label>
@@ -298,7 +398,7 @@ const AdminPanel = () => {
           {allNews &&
             allNews.map((currentNew, i) => {
               return (
-                <form onSubmit={handleEdit}>
+                <form key={currentNew._id} onSubmit={handleEdit}>
                   <div
                     className={
                       i === j
@@ -307,6 +407,139 @@ const AdminPanel = () => {
                     }
                   >
                     <div className="adminpanelMain-context-box-static">
+                      {i === j && showEdit ? (
+                        <h2
+                          key={i}
+                          className="adminpanelMain-context-headline-mobile"
+                        >
+                          <input
+                            className="adminpanelMain-context-headline"
+                            type="text"
+                            placeholder="Podaj tytuł"
+                            defaultValue={currentNew.title}
+                            onChange={(e) => {
+                              setTitleEdit(e.target.value);
+                            }}
+                          />
+                        </h2>
+                      ) : (
+                        <h2
+                          key={i}
+                          className="adminpanelMain-context-headline-mobile"
+                        >
+                          {currentNew.title}
+                        </h2>
+                      )}
+                      <div className="adminpanelMain-context-dateauthor-mobile">
+                        <MdAccessTime
+                          style={{
+                            color: "#aaa",
+                            float: "left",
+                            margin: "5px",
+                          }}
+                          size={24}
+                        />
+                        <p key={i}>
+                          {new Date(currentNew.createdAt).toLocaleDateString()}
+                        </p>
+                        {i === j && showEdit ? (
+                          <div>
+                            <select
+                              className="adminpanelMain-category-con"
+                              name="continent"
+                              defaultValue={currentNew.continent}
+                              onChange={(e) => setContinentEdit(e.target.value)}
+                            >
+                              <option value="-" selected>
+                                Brak kategorii
+                              </option>
+                              <option value="Europa">Europa</option>
+                              <option value="Azja">Azja</option>
+                              <option value="Afryka">Afryka</option>
+                              <option value="Ameryka">Ameryka</option>
+                            </select>
+                            {continentEdit == "Europa" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Hiszpania" selected>
+                                  Hiszpania
+                                </option>
+                                <option value="Portugalia">Portugalia</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="Belgia">Belgia</option>
+                                <option value="Finlandia">Finlandia</option>
+                                <option value="Norwegia">Norwegia</option>
+                                <option value="Czarnogóra">Czarnogóra</option>
+                                <option value="Serbia">Serbia</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Włochy">Włochy</option>
+                                <option value="Bułgaria">Bułgaria</option>
+                                <option value="Francja">Francja</option>
+                                <option value="Austria">Austria</option>
+                              </select>
+                            )}
+                            {continentEdit == "Azja" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Chiny" selected>
+                                  Chiny
+                                </option>
+                                <option value="Japonia">Japonia</option>
+                                <option value="Zjednoczone Emiraty Arabskie">
+                                  Zjednoczone Emiraty Arabskie
+                                </option>
+                              </select>
+                            )}
+                            {continentEdit == "Ameryka" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option
+                                  value="Strany Zjednoczone Ameryki"
+                                  selected
+                                >
+                                  Strany Zjednoczone Ameryki
+                                </option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Jamajka">Jamajka</option>
+                              </select>
+                            )}
+                            {continentEdit == "Afryka" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Maroko" selected>
+                                  Maroko
+                                </option>
+                                <option value="Tunezja">Tunezja</option>
+                              </select>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="adminpanelMain-context-box-category">
+                            <h3 style={{ color: randomColor() }}>
+                              {currentNew.continent}
+                            </h3>
+                            <h3 style={{ color: randomColor() }}>
+                              {currentNew.country}
+                            </h3>
+                          </div>
+                        )}
+                      </div>
                       <div className="adminpanelMain-context-img">
                         {currentNew.image && (
                           <div className="adminpanelMain-context-img-carousel">
@@ -321,7 +554,7 @@ const AdminPanel = () => {
                                   >
                                     {/* ee */}
                                     <img
-                                      src={`/images/${img.filename}`}
+                                      src={`../apitravel/server/public/images/${img.filename}`}
                                       alt="brak zdjecia"
                                     />
                                   </div>
@@ -338,19 +571,18 @@ const AdminPanel = () => {
                                   >
                                     {/*ee2*/}
                                     <img
-                                      src={`/images/${img.filename}`}
+                                      src={`../apitravel/server/public/images/${img.filename}`}
                                       alt="brak zdjecia"
                                     />
-                                    {i === j && (
-                                      <p
-                                        className="adminpanelMain-context-carousel-delete"
-                                        onClick={() => {
-                                          deleteImage(img);
-                                        }}
-                                      >
-                                        Usuń zdjęcie
-                                      </p>
-                                    )}
+
+                                    <p
+                                      className="adminpanelMain-context-carousel-delete"
+                                      onClick={() => {
+                                        deleteImage(img);
+                                      }}
+                                    >
+                                      Usuń zdjęcie
+                                    </p>
                                   </div>
                                 );
                               })}
@@ -365,12 +597,12 @@ const AdminPanel = () => {
                                           {/* qq */}
                                           <img
                                             className="adminpanelMain-context-carousel-img"
-                                            src={`/images/${img.filename}`}
+                                            src={`../apitravel/server/public/images/${img.filename}`}
                                             alt="brak zdjecia"
                                           />
                                         </div>
                                       );
-                                    }
+                                    },
                                   )}
                                 </Carousel>
                               )}
@@ -383,7 +615,7 @@ const AdminPanel = () => {
                                       {/* ww */}
                                       <img
                                         className="adminpanelMain-context-carousel-img"
-                                        src={`/images/${img.filename}`}
+                                        src={`../apitravel/server/public/images/${img.filename}`}
                                         alt="brak zdjecia"
                                       />
                                     </div>
@@ -403,12 +635,12 @@ const AdminPanel = () => {
                                           {/* rr */}
                                           <img
                                             className="adminpanelMain-context-carousel-img"
-                                            src={`/images/${img.filename}`}
+                                            src={`../apitravel/server/public/images/${img.filename}`}
                                             alt="brak zdjecia"
                                           />
                                         </div>
                                       );
-                                    }
+                                    },
                                   )}
                                 </Carousel>
                               )}
@@ -423,23 +655,22 @@ const AdminPanel = () => {
                                           {/* rr */}
                                           <img
                                             className="adminpanelMain-context-carousel-img"
-                                            src={`/images/${img.filename}`}
+                                            src={`../apitravel/server/public/images/${img.filename}`}
                                             alt="brak zdjecia"
                                             name="files"
                                           />
-                                          {i === j && (
-                                            <p
-                                              className="adminpanelMain-context-carousel-delete"
-                                              onClick={() => {
-                                                deleteImage(img);
-                                              }}
-                                            >
-                                              Usuń zdjęcie
-                                            </p>
-                                          )}
+
+                                          <p
+                                            className="adminpanelMain-context-carousel-delete"
+                                            onClick={() => {
+                                              deleteImage(img);
+                                            }}
+                                          >
+                                            Usuń zdjęcie
+                                          </p>
                                         </div>
                                       );
-                                    }
+                                    },
                                   )}
                                 </Carousel>
                               )}
@@ -480,14 +711,14 @@ const AdminPanel = () => {
                                         button.className =
                                           "adminpanelMain-context-inputimage-button";
                                         image.src = URL.createObjectURL(
-                                          e.target.files[i]
+                                          e.target.files[i],
                                         );
                                         image.id = `output${i}`;
                                         image.style.marginBottom = "0";
                                         image.width = "200";
 
                                         document.querySelector(
-                                          ".imageSingle"
+                                          ".imageSingle",
                                         ).style.position = "relative";
                                         document
                                           .querySelector(".imageSingle")
@@ -561,14 +792,14 @@ const AdminPanel = () => {
                                         button.className =
                                           "adminpanelMain-context-inputimage-button";
                                         image.src = URL.createObjectURL(
-                                          e.target.files[i]
+                                          e.target.files[i],
                                         );
                                         image.id = `output${i}`;
                                         image.style.marginBottom = "0";
                                         image.width = "200";
 
                                         document.querySelector(
-                                          ".imageSingle"
+                                          ".imageSingle",
                                         ).style.position = "relative";
                                         document
                                           .querySelector(".imageSingle")
@@ -604,7 +835,10 @@ const AdminPanel = () => {
 
                       <div className="adminpanelMain-context-text">
                         {i === j && showEdit ? (
-                          <h2 key={i}>
+                          <h2
+                            key={i}
+                            className="adminpanelMain-context-headline-notmobile"
+                          >
                             <input
                               className="adminpanelMain-context-headline"
                               type="text"
@@ -616,8 +850,111 @@ const AdminPanel = () => {
                             />
                           </h2>
                         ) : (
-                          <h2 key={i}>{currentNew.title}</h2>
+                          <h2
+                            key={i}
+                            className="adminpanelMain-context-headline-notmobile"
+                          >
+                            {currentNew.title}
+                          </h2>
                         )}
+                        {i === j && showEdit ? (
+                          <div>
+                            <select
+                              className="adminpanelMain-category-con"
+                              name="continent"
+                              defaultValue={currentNew.continent}
+                              onChange={(e) => setContinentEdit(e.target.value)}
+                            >
+                              <option value="-" selected>
+                                Brak kategorii
+                              </option>
+                              <option value="Europa">Europa</option>
+                              <option value="Azja">Azja</option>
+                              <option value="Afryka">Afryka</option>
+                              <option value="Ameryka">Ameryka</option>
+                            </select>
+                            {continentEdit == "Europa" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Hiszpania" selected>
+                                  Hiszpania
+                                </option>
+                                <option value="Portugalia">Portugalia</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="Belgia">Belgia</option>
+                                <option value="Finlandia">Finlandia</option>
+                                <option value="Norwegia">Norwegia</option>
+                                <option value="Czarnogóra">Czarnogóra</option>
+                                <option value="Serbia">Serbia</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Włochy">Włochy</option>
+                                <option value="Bułgaria">Bułgaria</option>
+                                <option value="Francja">Francja</option>
+                                <option value="Austria">Austria</option>
+                              </select>
+                            )}
+                            {continentEdit == "Azja" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Chiny" selected>
+                                  Chiny
+                                </option>
+                                <option value="Japonia">Japonia</option>
+                                <option value="Zjednoczone Emiraty Arabskie">
+                                  Zjednoczone Emiraty Arabskie
+                                </option>
+                              </select>
+                            )}
+                            {continentEdit == "Ameryka" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option
+                                  value="Strany Zjednoczone Ameryki"
+                                  selected
+                                >
+                                  Strany Zjednoczone Ameryki
+                                </option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Jamajka">Jamajka</option>
+                              </select>
+                            )}
+                            {continentEdit == "Afryka" && (
+                              <select
+                                className="adminpanelMain-category"
+                                name="country"
+                                defaultValue={currentNew.country}
+                                onChange={(e) => setContryEdit(e.target.value)}
+                              >
+                                <option value="Maroko" selected>
+                                  Maroko
+                                </option>
+                                <option value="Tunezja">Tunezja</option>
+                              </select>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="adminpanelMain-context-box-category">
+                            <h3 style={{ color: randomColor() }}>
+                              {currentNew.continent}
+                            </h3>
+                            <h3 style={{ color: randomColor() }}>
+                              {currentNew.country}
+                            </h3>
+                          </div>
+                        )}
+                        <div style={{ clear: "both" }}></div>
                         <div className="adminpanelMain-context-dateauthor">
                           <MdAccessTime
                             style={{
@@ -629,7 +966,7 @@ const AdminPanel = () => {
                           />
                           <p key={i}>
                             {new Date(
-                              currentNew.createdAt
+                              currentNew.createdAt,
                             ).toLocaleDateString()}
                           </p>
                         </div>

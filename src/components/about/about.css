@@ -9,6 +9,7 @@
   width: 60%;
   background-color: #000069;
   border: none;
+  margin-bottom: 50px;
 }
 .aboutMain-header > p {
   font-size: 32px;
@@ -44,9 +45,10 @@
 }
 .aboutMain-context-komendaHufca,
 .aboutMain-context-komisjaRewizyjna,
-.aboutMain-context-jednostki {
+.aboutMain-context-jednostki,
+.aboutMain-context-zespoly {
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 .aboutMain-context-komendaHufca-main,
@@ -151,6 +153,25 @@
   font-size: 18px;
   cursor: pointer;
 }
+.aboutMain-context-country > img {
+  height: 120px;
+  width: 120px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 1px solid #000;
+}
+.aboutMain-context-country > p {
+  text-align: center;
+  width: 120px;
+}
+.aboutMain-context-country {
+  float: left;
+  margin: 2.5%;
+  width: auto;
+}
+.aboutMain-context-country:hover {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1800px) {
   .aboutMain-context-komendaHufca-main > img,
@@ -183,6 +204,22 @@
   }
 }
 @media screen and (max-width: 800px) {
+  .aboutMain-slider {
+    padding-bottom: 10px;
+  }
+  .aboutMain-header > h1 {
+    font-size: 32px;
+  }
+  .aboutMain-header > hr {
+    font-size: 80%;
+  }
+  .aboutMain-context-jednostki > hr {
+    margin: 20px auto;
+  }
+  .aboutMain-header > p {
+    font-size: 24px;
+    padding: 10px;
+  }
   .aboutMain {
     width: 100%;
   }
@@ -192,23 +229,43 @@
   .aboutMain-context {
     width: 100%;
   }
-  .aboutMain-context-komendaHufca-main > img,
-  .aboutMain-context-zespoly-main-context-mainImage > img {
-    height: 240px;
+  .aboutMain-context-komendaHufca,
+  .aboutMain-context-komisjaRewizyjna,
+  .aboutMain-context-jednostki {
+    margin: 30px 0px;
+  }
+  .aboutMain-context-komendaHufca-main > svg,
+  .aboutMain-context-zespoly-main-context-mainImage > svg {
+    height: 180px;
   }
   .aboutMain-context-komendaHufca-main > h3,
   .aboutMain-context-zespoly-main-context-mainImage > h3 {
     font-size: 16px;
   }
   .aboutMain-context-komendaHufca-main > h1,
-  .aboutMain-context-zespoly-main-context-mainImage > h1 {
-    font-size: 24px;
+  .aboutMain-context-zespoly-main-context-mainImage > h1,
+  .aboutMain-context-zespoly-main-context > h1 {
+    font-size: 20px;
   }
-  .aboutMain-context-komendaHufca-rest-box > img {
-    height: 160px;
+  .aboutMain-context-komendaHufca-rest,
+  .aboutMain-context-komendaHufca-rest,
+  .aboutMain-context-zespoly-main-context-restImage {
+    margin: 40px 0px;
   }
-  .aboutMain-context-zespoly-main-context-restImage-box > img {
-    height: 200px;
+  .aboutMain-context-komendaHufca-rest-box > svg,
+  .aboutMain-context-zespoly-main-context-restImage-box > svg {
+    height: 80px;
+    width: 80px;
+  }
+  .aboutMain-context-jednostki-szczepy-main-box > svg {
+    height: 60px;
+    width: 60px;
+  }
+  .aboutMain-context-komendaHufca-rest-box > p:first-child {
+    font-size: 12px;
+  }
+  .aboutMain-context-komendaHufca-rest-box > p:last-child {
+    font-size: 8px;
   }
   .aboutMain-context-zespoly-main-context-restImage-box {
     font-size: 14px;
@@ -217,19 +274,30 @@
   .aboutMain-context-komendaHufca-rest-box {
     font-size: 12px;
   }
-  .aboutMain-context-jednostki-szczepy-main-box > img {
-    height: 90px;
-  }
+
   .aboutMain-context-jednostki-main-boxes-box > h1 {
     font-size: 24px;
   }
   .aboutMain-context-jednostki-main-boxes-box > p {
     font-size: 14px;
   }
+  .aboutMain-context-jednostki-szczepy > h1,
+  .aboutMain-context-jednostki-main > h1 {
+    font-size: 24px;
+    margin: 20px auto;
+  }
   .aboutMain-context-jednostki > hr {
     width: 100%;
   }
   .aboutMain-context-zespoly-main-context > h1 {
     margin-left: 20px;
+  }
+  .aboutMain-context-zespoly-main-list > ul {
+    height: 140px;
+  }
+  .aboutMain-context-zespoly-main-list-li,
+  .aboutMain-context-zespoly-main-list-li-active {
+    font-size: 12px;
+    height: 50px;
   }
 }

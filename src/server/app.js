@@ -84,6 +84,8 @@ app.post("/news", upload.array("files"), (req, res) => {
       title: req.body.title,
       context: req.body.context,
       author: req.body.author,
+      continent: req.body.continent,
+      country: req.body.country,
       image: null,
     });
     news
@@ -97,6 +99,8 @@ app.post("/news", upload.array("files"), (req, res) => {
       title: req.body.title,
       context: req.body.context,
       author: req.body.author,
+      continent: req.body.continent,
+      country: req.body.country,
       image: req.files,
     });
     for (var i = 0; i < req.files.length; i++) {
@@ -109,6 +113,9 @@ app.post("/news", upload.array("files"), (req, res) => {
         console.log(err);
       });
   }
+
+  console.log(req.body.continent);
+  console.log(req.body.country);
 });
 
 app.get("/news/:id", (req, res) => {
@@ -206,14 +213,16 @@ app.put("/news/:tokenId/:id", upload.array("files"), (req, res) => {
     News.findByIdAndUpdate(
       id,
       {
+        continent: req.body.continent,
+        country: req.body.country,
         $push: { image: { $each: new_image } },
       },
       (err, result) => {
         if (err) {
           res.json(err);
         } else {
-          console.log("Utowrzony");
-
+          console.log("Utowrzony0");
+          console.log(req.body);
           res.json({ redirect: "/news" });
         }
       }
@@ -223,14 +232,16 @@ app.put("/news/:tokenId/:id", upload.array("files"), (req, res) => {
       id,
       {
         context: req.body.context,
+        continent: req.body.continent,
+        country: req.body.country,
         $push: { image: { $each: new_image } },
       },
       (err, result) => {
         if (err) {
           res.json(err);
         } else {
-          console.log("Utowrzony");
-
+          console.log("Utowrzony1");
+          console.log(req.body);
           res.json({ redirect: "/news" });
         }
       }
@@ -240,14 +251,16 @@ app.put("/news/:tokenId/:id", upload.array("files"), (req, res) => {
       id,
       {
         title: req.body.title,
+        continent: req.body.continent,
+        country: req.body.country,
         $push: { image: { $each: new_image } },
       },
       (err, result) => {
         if (err) {
           res.json(err);
         } else {
-          console.log("Utowrzony");
-
+          console.log("Utowrzony2");
+          console.log(req.body);
           res.json({ redirect: "/news" });
         }
       }
@@ -258,6 +271,8 @@ app.put("/news/:tokenId/:id", upload.array("files"), (req, res) => {
       {
         title: req.body.title,
         context: req.body.context,
+        continent: req.body.continent,
+        country: req.body.country,
         author: null,
         $push: { image: { $each: new_image } },
       },
@@ -265,8 +280,8 @@ app.put("/news/:tokenId/:id", upload.array("files"), (req, res) => {
         if (err) {
           res.json(err);
         } else {
-          console.log("Utowrzony");
-
+          console.log("Utowrzony3");
+          console.log(req.body);
           res.json({ redirect: "/news" });
         }
       }

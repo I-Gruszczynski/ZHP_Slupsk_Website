@@ -19,6 +19,14 @@ const newsSchema = new Schema(
       type: String,
       require: false,
     },
+    continent: {
+      type: String,
+      require: true,
+    },
+    country: {
+      type: String,
+      require: true,
+    },
     date: {
       type: Date,
       require: true,
